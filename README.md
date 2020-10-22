@@ -1,2 +1,2 @@
-# Node_Stack
+# Node-Stack
 Making stacks with nodes
