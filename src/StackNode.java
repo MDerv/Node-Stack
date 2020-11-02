@@ -11,7 +11,7 @@ public class StackNode {
     private TestNode lastNode;
 
 
-    public Stack() {
+    public StackNode() {
         firstNode = new TestNode();
         lastNode = firstNode;
         length = 0;
@@ -28,10 +28,10 @@ public class StackNode {
 
     public void push(T element) { //add an element
         if (length == 0) {
-            firstNode = (TestNode) element;
+            firstNode = ((TestNode)element);
         } else {
             peekNode().setChild((TestNode) (element));
-            (TestNode) (element).setParent(peekNode());
+            ((TestNode)(element)).setParent(peekNode());
         }
     }
 
