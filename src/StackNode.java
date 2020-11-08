@@ -1,65 +1,62 @@
 /*
 Dhruv Sharma
-10/28/2020
-10/28/2020
-This is a the class that defines a stack using nodes.
- */
-public class StackNode {
+9/30/2020
+10/4/2020
+This is a simple node class
+*/
 
-    private int length;
-    private TestNode firstNode;
-    private TestNode lastNode;
+public class StackNode<T> {
 
+    private StackNode parentNode;
+//    private StackNode childNode;
+    private T tData;
 
     public StackNode() {
-        firstNode = new TestNode();
-        lastNode = firstNode;
-        length = 0;
+        //empty
     }
 
-    public boolean isEmpty() { //checks if stack is empty
-        if (length == 0) {
-            return true;
-        } else {
-            return false;
-        }
+    public StackNode(T data) { // 1 param
+        tData = data;
+        parentNode = null;
+//        childNode = null;
     }
 
-
-    public void push(T element) { //add an element
-        if (length == 0) {
-            firstNode = ((TestNode)element);
-        } else {
-            peekNode().setChild((TestNode) (element));
-            ((TestNode)(element)).setParent(peekNode());
-        }
+    public StackNode(T data, StackNode parent) { // 2 param
+        tData = data;
+        parentNode = parent;
+//        childNode = child;
     }
 
-    public T pop() { //remove and return the top element
-        TestNode tempNode = peekNode();
-        peekNode().getParent().setChild(null);
-        return tempNode.getTData;
+    public StackNode getParent () { //returns parentNode instance variable
+        return parentNode;
     }
 
-    public int size() {
-        return length;
+//    public StackNode getChild () { //returns childNode instance variable
+//        return childNode;
+//    }
+
+    public T getTData() { //returns tData instance variable
+        return tData;
     }
 
-    public TestNode peekNode() { //look at the top node without removing
-        TestNode tempNode = firstNode;
-        if (length > 1) {
-            for (int i = 0; i < length - 2; i++) {
-                tempNode.getChild();
-            }
-            return tempNode;
-        } else if (length == 1) {
-            return firstNode;
-        } else {
-            return null;
-        }
+    public void newParent(StackNode parent) { //overwrites parentNode instance variable
+        parentNode =  parent;
     }
 
-    public T peek() { //look at the top element without removing
-        return peekNode().getTData;
+    public void setParent(StackNode parent) { //overwrites parentNode instance variable
+        parentNode = parent;
     }
+
+    public void newTData(T data) { //overwrites tData instance variable
+        tData =  data;
+    }
+
+    public String toString() { //outputs tData as a string
+        return "Node: " + tData.toString();
+    }
+
+    public boolean equals(StackNode nodeToCompare) { //compares tData instance variable to another class' tData instance variable
+        return tData == nodeToCompare.getTData();
+    }
+
 }

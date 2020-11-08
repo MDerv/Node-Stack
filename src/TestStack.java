@@ -11,7 +11,7 @@ public class TestStack {
     public static void main(String[] args) {
         Scanner s = new Scanner(System.in);
         Stack st = new Stack(); //real stack
-        StackNode sn = new StackNode(); //stack made of nodes
+        Stack sn = new Stack(); //stack made of nodes
 
         //add 1st element to stacks
         st.push(2);
