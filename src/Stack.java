@@ -28,6 +28,7 @@ public class Stack<T> {
         if (length == 0) {
             StackNode tempNode = new StackNode(element);
             lastNode = tempNode;
+            length++;
         } else {
             StackNode tempNode = new StackNode(element, peekNode());
             lastNode = tempNode;
@@ -41,14 +42,17 @@ public class Stack<T> {
         if(length > 1) {
             lastNode = peekNode().getParent();
             tempNode.setParent(null);
+            length--;
             return (T) tempNode.getTData();
         }
         else if(length == 1) {
-            lastNode.newTData(null);
+            lastNode = new StackNode();
+            length--;
             return (T) tempNode.getTData();
         }
         else {
-            throw new IndexOutOfBoundsException("Your stack is empty!");        }
+            throw new IndexOutOfBoundsException("Your stack is empty!");
+        }
     }
 
     public int size() {
