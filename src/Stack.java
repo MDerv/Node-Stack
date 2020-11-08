@@ -60,6 +60,6 @@ public class Stack<T> {
     }
 
     public T peek() { //look at the top element without removing
-        return peekNode().getTData;
+        return (T) peekNode().getTData();
     }
 }
