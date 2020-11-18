@@ -8,7 +8,6 @@ This is a simple node class
 public class StackNode<T> {
 
     private StackNode parentNode;
-//    private StackNode childNode;
     private T tData;
 
     public StackNode() {
@@ -18,22 +17,16 @@ public class StackNode<T> {
     public StackNode(T data) { // 1 param
         tData = data;
         parentNode = null;
-//        childNode = null;
     }
 
     public StackNode(T data, StackNode parent) { // 2 param
         tData = data;
         parentNode = parent;
-//        childNode = child;
     }
 
     public StackNode getParent () { //returns parentNode instance variable
         return parentNode;
     }
-
-//    public StackNode getChild () { //returns childNode instance variable
-//        return childNode;
-//    }
 
     public T getTData() { //returns tData instance variable
         return tData;

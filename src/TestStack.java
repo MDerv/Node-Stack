@@ -12,8 +12,14 @@ public class TestStack {
         Scanner s = new Scanner(System.in);
         Stack st = new Stack(); //real stack
 
+        //should output true
+        System.out.println(st.isEmpty());
+
         //add 1st element to stacks
         st.push(2);
+
+        //should output false
+        System.out.println(st.isEmpty());
 
         //should return 2
         System.out.println(st.peek());
